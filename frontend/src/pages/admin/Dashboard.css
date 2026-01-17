@@ -1,0 +1,287 @@
+/* Dashboard.css - Futuristic Admin Design */
+.admin-dashboard {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+/* Header Styles */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+.admin-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>') bottom center/cover no-repeat;
+}
+
+.admin-stats .stat-card {
+  backdrop-filter: blur(10px);
+  color: black;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-stats h3 {
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #fff 0%, #e2e8f0 100%);
+  color: grey;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-header {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px 20px 0 0 !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Stats Cards */
+.stats-card {
+  transition: all 0.3s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.stats-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Popular Photos */
+.popular-photo-item {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.popular-photo-item:hover {
+  border-color: #667eea;
+  transform: translateX(5px);
+}
+
+.rank-badge {
+  font-size: 0.9rem;
+  min-width: 45px;
+  text-align: center;
+}
+
+.photo-image img {
+  transition: transform 0.3s ease;
+}
+
+.popular-photo-item:hover .photo-image img {
+  transform: scale(1.1);
+}
+
+/* Activity List */
+.activity-item {
+  transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 10px;
+  transform: translateX(5px);
+}
+
+.activity-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quick Actions */
+.quick-action-card {
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+
+.quick-action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+}
+
+.quick-action-card:hover .action-icon {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.quick-action-card:hover .text-primary,
+.quick-action-card:hover .text-success,
+.quick-action-card:hover .text-info,
+.quick-action-card:hover .text-warning {
+  color: white !important;
+}
+
+.quick-action-card:hover .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.action-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button Styles */
+.btn {
+  font-size: 1.1rem !important;
+  padding: 12px 24px !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-outline-primary {
+  border: 2px solid #667eea;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding-top: 70px;
+  }
+  
+  .admin-header h1 {
+    font-size: 2rem;
+  }
+  
+  .card-body {
+    padding: 1.5rem !important;
+  }
+  
+  .stats-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .popular-photo-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .rank-badge {
+    align-self: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-header {
+    padding: 2rem 0 !important;
+  }
+  
+  .admin-stats .stat-card {
+    padding: 1rem !important;
+  }
+  
+  .quick-action-card .card-body {
+    padding: 1.5rem !important;
+  }
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-card,
+.popular-photo-item,
+.activity-item,
+.quick-action-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+/* Loading spinner */
+.spinner-border {
+  animation: spinner-grow 1s ease-in-out infinite;
+}
+
+@keyframes spinner-grow {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: none;
+  }
+}

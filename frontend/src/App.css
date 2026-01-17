@@ -1,0 +1,50 @@
+/* APP.CSS - FIX FULLSCREEN */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* HEADER FIX - PASTIKAN HEADER TIDAK MEMPENGARUHI LAYOUT */
+header {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* MAIN FIX - INI YANG BIKIN MASALAH! */
+main {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+/* FORCE HOME TO BE FULL WIDTH */
+.home {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative;
+  left: 0;
+  right: 0;
+}

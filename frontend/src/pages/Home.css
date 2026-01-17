@@ -1,0 +1,568 @@
+/* Home.css - Bootstrap Purple Theme dengan Animasi */
+
+:root {
+  --primary-purple: #6f42c1;
+  --secondary-purple: #8b5cf6;
+  --light-purple: #a78bfa;
+  --dark-purple: #5a32a3;
+  --gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Purple Theme Classes */
+.bg-gradient-primary {
+  background: var(--gradient-purple) !important;
+}
+
+.bg-purple {
+  background-color: var(--primary-purple) !important;
+}
+
+.text-purple {
+  color: var(--primary-purple) !important;
+}
+
+.btn-purple {
+  background-color: var(--primary-purple);
+  border-color: var(--primary-purple);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.btn-purple:hover {
+  background-color: var(--dark-purple);
+  border-color: var(--dark-purple);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline-purple {
+  border-color: var(--primary-purple);
+  color: var(--primary-purple);
+  transition: all 0.3s ease;
+}
+
+.btn-outline-purple:hover {
+  background-color: var(--primary-purple);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Hero Section dengan Carousel */
+.hero-section {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  transform: scale(1.1);
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.carousel-slide::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.hero-content {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+  font-size: 4rem;
+  background: linear-gradient(135deg, #fff 0%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.scroll-arrow {
+  width: 30px;
+  height: 30px;
+  border-right: 3px solid white;
+  border-bottom: 3px solid white;
+  transform: rotate(45deg);
+  animation: bounce 2s infinite;
+}
+
+/* Tambahkan ke Home.css */
+.modal-dialog-centered {
+  max-height: 95vh !important;
+}
+
+.modal-content {
+  max-height: 90vh !important;
+}
+
+.modal-body {
+  max-height: 85vh !important;
+  overflow: hidden !important;
+}
+
+.modal-image-container {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.modal-image {
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.modal-content-section {
+  max-height: 85vh !important;
+  overflow-y: auto;
+}
+
+.comments-scrollable {
+  max-height: 300px !important;
+  overflow-y: auto;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: rotate(45deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(45deg) translate(-10px, -10px);
+  }
+}
+
+/* Card Animations */
+.photo-card-hover {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: none !important;
+}
+
+.photo-card-hover:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+}
+
+.transition-transform {
+  transition: transform 0.3s ease;
+}
+
+.photo-card-hover:hover .transition-transform {
+  transform: scale(1.1);
+}
+
+.photo-overlay {
+  background: linear-gradient(transparent 40%, rgba(0, 0, 0, 0.8));
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.photo-card-hover:hover .photo-overlay {
+  opacity: 1;
+}
+
+/* CTA Section Animation */
+.cta-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1544468266-6a8948001c78?ixlib=rb-4.0.1&auto=format&fit=crop&w=2000&q=80') center/cover;
+  opacity: 0.1;
+  animation: backgroundMove 20s linear infinite;
+}
+
+@keyframes backgroundMove {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(1deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Like Animation */
+.btn-danger {
+  transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+  transform: scale(1.1);
+}
+
+/* ========================= */
+/* FIXED MODAL SIZE STYLES */
+/* ========================= */
+
+/* Fixed Modal Size */
+.fixed-modal-size {
+  max-width: 900px;
+  width: 95%;
+}
+
+.modal-content-section {
+  height: 600px; /* Fixed height untuk konten */
+  max-height: 80vh;
+}
+
+.modal-image-container {
+  max-height: 600px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #000;
+}
+
+.modal-image {
+  max-height: 560px; /* Sesuaikan dengan container */
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Comments Scrollable Area */
+.comments-scrollable {
+  overflow-y: auto;
+  max-height: 300px;
+  min-height: 200px;
+}
+
+/* Custom Scrollbar untuk Comments */
+.comments-scrollable::-webkit-scrollbar {
+  width: 6px;
+}
+
+.comments-scrollable::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.comments-scrollable::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.comments-scrollable::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Modal Body Padding Removal */
+.modal-body.p-0 {
+  border-radius: 0.5rem;
+}
+
+/* Modal enhancements */
+.modal-content {
+  animation: modalAppear 0.3s ease-out;
+  border: none;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Modal Header Styling */
+.modal-header {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Modal Section Styling */
+.modal-content-section .p-3 {
+  padding: 1rem 1.5rem !important;
+}
+
+/* Comments List Styling */
+.comments-list .mb-3 {
+  margin-bottom: 1rem !important;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f3f5;
+}
+
+.comments-list .mb-3:last-child {
+  border-bottom: none;
+  margin-bottom: 0 !important;
+}
+
+/* Responsive Design untuk Modal */
+@media (max-width: 768px) {
+  .fixed-modal-size {
+    max-width: 95%;
+    margin: 20px auto;
+  }
+  
+  .modal-content-section {
+    height: 500px;
+    max-height: 70vh;
+  }
+  
+  .modal-image-container {
+    max-height: 400px;
+    padding: 15px;
+  }
+  
+  .modal-image {
+    max-height: 370px;
+  }
+  
+  .comments-scrollable {
+    max-height: 200px;
+    min-height: 150px;
+  }
+  
+  .modal-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .modal-content-section .p-3 {
+    padding: 0.75rem 1rem !important;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .display-5 {
+    font-size: 1.8rem;
+  }
+  
+  .carousel-indicators {
+    bottom: 20px;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations delay */
+.animate__delay-1s {
+  animation-delay: 0.3s !important;
+}
+
+.animate__delay-2s {
+  animation-delay: 0.6s !important;
+}
+
+.animate__delay-3s {
+  animation-delay: 0.9s !important;
+}
+
+/* Card body background fix */
+.card-body.bg-white {
+  background: white !important;
+  border-radius: 0 0 0.375rem 0.375rem;
+}
+
+/* Loading animation enhancement */
+.spinner-border.text-purple {
+  animation: spinner-grow 1s ease-in-out infinite;
+}
+
+/* Text small improvements */
+.small {
+  font-size: 0.875rem;
+}
+
+/* Form control small */
+.form-control-sm {
+  font-size: 0.875rem;
+  padding: 0.375rem 0.75rem;
+}
+
+/* Button small */
+.btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Badge improvements */
+.badge {
+  font-size: 0.75em;
+  font-weight: 500;
+}
+
+/* Flex utilities untuk modal */
+.flex-shrink-0 {
+  flex-shrink: 0 !important;
+}
+
+.flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+/* Background colors untuk modal sections */
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+}
+
+.bg-dark {
+  background-color: #000000 !important;
+}
+
+/* Border utilities */
+.border-bottom {
+  border-bottom: 1px solid #e9ecef !important;
+}
+
+.border-top {
+  border-top: 1px solid #e9ecef !important;
+}
+
+/* Cursor pointer */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Object fit */
+.object-fit-cover {
+  object-fit: cover;
+}
+
+.object-fit-contain {
+  object-fit: contain;
+}
+
+/* Height utilities */
+.h-100 {
+  height: 100% !important;
+}
+
+.min-vh-100 {
+  min-height: 100vh !important;
+}
+
+.min-vh-50 {
+  min-height: 50vh !important;
+}
+
+/* Position utilities */
+.position-relative {
+  position: relative !important;
+}
+
+.position-absolute {
+  position: absolute !important;
+}
+
+.z-2 {
+  z-index: 2 !important;
+}
+
+/* Overflow utilities */
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-y-auto {
+  overflow-y: auto !important;
+}
+
